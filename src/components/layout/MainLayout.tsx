@@ -8,12 +8,12 @@ import Topbar from "../common/Topbar";
 const MainLayout = () => {
   return (
     <Box sx={{ display: "flex" }}>
-      <Topbar />
+      {/* <Topbar /> */}
       <Box
         component="nav"
         sx={{
           width: sizeConfigs.sidebar.width,
-          flexShrink: 0
+          flexShrink: 0,
         }}
       >
         <Sidebar />
@@ -25,7 +25,7 @@ const MainLayout = () => {
           p: 3,
           width: `calc(100% - ${sizeConfigs.sidebar.width})`,
           minHeight: "100vh",
-          backgroundColor: colorConfigs.mainBg
+          backgroundColor: colorConfigs.mainBg,
         }}
       >
         <Toolbar />

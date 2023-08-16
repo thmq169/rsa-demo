@@ -11,13 +11,11 @@ const Topbar = () => {
         ml: sizeConfigs.sidebar.width,
         boxShadow: "unset",
         backgroundColor: colorConfigs.topbar.bg,
-        color: colorConfigs.topbar.color
+        color: colorConfigs.topbar.color,
       }}
     >
       <Toolbar>
-        <Typography variant="h6">
-          React sidebar with dropdown
-        </Typography>
+        <Typography variant="h6">Tô Hoàng Minh Quân - 520H0671</Typography>
       </Toolbar>
     </AppBar>
   );

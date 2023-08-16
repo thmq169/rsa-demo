@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Avatar, Drawer, List, Stack, Toolbar } from "@mui/material";
 import assets from "../../assets";
 import colorConfigs from "../../configs/colorConfigs";
@@ -18,21 +19,29 @@ const Sidebar = () => {
           boxSizing: "border-box",
           borderRight: "0px",
           backgroundColor: colorConfigs.sidebar.bg,
-          color: colorConfigs.sidebar.color
-        }
+          color: colorConfigs.sidebar.color,
+        },
       }}
     >
       <List disablePadding>
         <Toolbar sx={{ marginBottom: "20px" }}>
-          <Stack
-            sx={{ width: "100%" }}
-            direction="row"
-            justifyContent="center"
-          >
-            <Avatar src={assets.images.logo} />
+          <Stack sx={{ width: "100%" }} direction="row" justifyContent="center">
+            <Link to="/">
+              <Avatar
+                sx={{
+                  "&": {
+                    width: "auto",
+                  },
+                }}
+                // style={{ width: "100%" }}
+                // alt="logoTDT"
+                variant="rounded"
+                src={assets.images.logo}
+              />
+            </Link>
           </Stack>
         </Toolbar>
-        {appRoutes.map((route, index) => (
+        {appRoutes.map((route, index) =>
           route.sidebarProps ? (
             route.child ? (
               <SidebarItemCollapse item={route} key={index} />
@@ -40,7 +49,7 @@ const Sidebar = () => {
               <SidebarItem item={route} key={index} />
             )
           ) : null
-        ))}
+        )}
       </List>
     </Drawer>
   );
